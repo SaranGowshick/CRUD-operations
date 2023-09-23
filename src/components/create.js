@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 import {Link } from 'react-router-dom';
-import './css/index.css';
+
 
 const api_base="http://localhost:3001";
 function Create() {
