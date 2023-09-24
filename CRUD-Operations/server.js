@@ -40,8 +40,9 @@ app.post('/employee',async(req,res)=>{
     const empId= req.body.EmployeeID;
     const empEmail=req.body.EmployeeEmail;
     const empPhone=req.body.EmployeePhone;
+    const error=req.body.Error
     try{
-        if(empName !== '' && empId !== '' && empEmail !== ' ' && empPhone != ''){
+        if(empName !== '' && empId !== '' && empEmail !== ' ' && empPhone != '' ){
             const existingEmployee = await Employee.findOne({ "Email": empEmail });
             if (existingEmployee) {
                 console.log("if part")
