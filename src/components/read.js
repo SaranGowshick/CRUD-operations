@@ -15,7 +15,7 @@ function Read() {
         fetch(api_base+'/details')
             .then((res)=>res.json())
             .then((data)=>setEmployees(data))
-            .catch((error)=>console.log(error))
+            .catch((error)=>alert(error))
     }
    
   
@@ -33,26 +33,28 @@ function Read() {
    
   const filteredKeys = Object.keys(employees[0] || {}).filter((key) => key !== '_id' && key !== '__v');
   return (
-    <div className='employee-read'>
+    <div >
         <header className='employee-dashboard'>
                 <div className='h1-text'>
-                    <div>
+                    
                     <h1 id='dashboard-text'>Employee Dashboard</h1>
-                    </div>
+                    
                 </div>
-                <div>
+                <div className='img'>
                     <img src={logo} alt='logo'/>
                 </div>
             </header>
-        <div className='employee-display'>
-         
-          <div className='employee-table'>
-            <br/>
+        <div className='employee-read'>      
             <div className='employee-db'>
                 <h1>Employees List</h1>
-                  <button class='btn-create'id='btn3'><Link className='link'to='/create'>Add Employee</Link></button>
+                  <div>
+                    <button id='btn3'><Link className='link'to='/create'>Add Employee</Link></button>
+                  </div>
             </div>
-            <br/>
+        <div className='employee-display'>
+         
+          <div  className='employee-table'>
+           <br/>
             <table id="customers">
               <thead>
                 <tr>
@@ -84,7 +86,7 @@ function Read() {
             <br/>
             
           </div>
-          
+          </div>
         </div>
       </div>
   );
