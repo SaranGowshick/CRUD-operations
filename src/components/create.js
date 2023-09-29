@@ -65,10 +65,7 @@ function Create() {
 
       }
     }catch(error){
-     if(error.status===400){
-      console.log("hii");
       alert("EMployee Data Is Invalid")
-     }
     }
   }
   
