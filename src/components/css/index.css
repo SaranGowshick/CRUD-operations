@@ -12,7 +12,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height:90vh;
+    height: 100vh;
+    width: 100%;
     background-color:#edebf2;
    
 }
@@ -25,25 +26,19 @@
     font-size: large;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 500px; 
 }
 .employee-dashboard{
-    height:70px;
+    height: 70px;
     display: flex;
     background-color: #343a40;
-    color:white;
+    color: white;
     flex-direction: row;
-    align-items: start;
+    align-items: center;
     justify-content: space-between;
+    padding: 0px 20px;
 }
-.employee-dashboard div{
-    margin-left: 30px;
-    margin-right: 30px;
-    margin-top: 10px;
-}
-.h1-text{
-    margin-top: 20px;
-}
+
 #dashboard-text{
     font-size:25px;
 }
@@ -51,6 +46,9 @@ img{
     height:40px;
     width: 40px;
     border-radius: 50%;
+}
+.img  :hover{
+    opacity:0.5;
 }
 .employee-title{
     display: flex;
@@ -67,7 +65,6 @@ img{
 }
 .text{
     display: flex;
-   
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -85,22 +82,21 @@ input{
 }
 .employee-form div{
     width:100%;
-    padding: 20px;
+    padding: 20px 15px;
 }
 
 .button{
     display: flex;
     align-items: center;
     flex-direction: row;
+    justify-content: space-between;
     
 }
 .btn-submit{
-    margin-left:300px;
+    margin-right:37px;
 
 }
-.btn-create{
-    margin-left:920px;
-}
+
 
 #btn{
     color:white;
@@ -127,22 +123,32 @@ input{
 #btn3{
     color:white;
     background-color:#28a745;
-    padding:10px;
-    border:none;
+    padding:10px;  
+    border:none;  
     border-radius:5px ;
+}
+#btn3 :hover{
+    opacity:0.7;
+   
 }
 
 .employee-table{
     display:flex;
+    overflow-x:auto;
+
     align-items: center;
     justify-content:center ;
     flex-direction: column;
 }
-
+.employee-read{
+    padding:0px 30px;
+    padding-top:30px;
+}
 .employee-db{
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: space-between;
+   
 }
 .employee-create{
     display: flex;
@@ -155,10 +161,10 @@ input{
 
 #customers {
     margin:20px;
-   
+    width:100%;
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
-    width: 80%;
+    
   }
   
   #customers td, #customers th {
@@ -178,4 +184,14 @@ input{
     background-color: #04AA6D;
     color: white;
   }
+  /* table {
+    border-collapse:collapse;
+      width: 100%;
+}
 
+thead, td {
+       border: 1px solid black;
+       padding: 8px;
+       text-align: center;
+
+} */
