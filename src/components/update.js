@@ -1,4 +1,4 @@
-import react,{useState,useEffect} from 'react';
+import React,{useState,useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './css/index.css';
@@ -7,7 +7,6 @@ import logo from './assets/logo.png'
 const api_base="http://localhost:3001";
 function Update(){
     const {id}=useParams();
-    const[employee,setEmployee]=useState([]);
     const [updatedEmployeeName, setUpdatedEmployeeName] = useState('');
     const [updatedEmployeeID, setUpdatedEmployeeID] = useState('');
     const [updatedEmployeeEmail, setUpdateEmployeeEmail] = useState('');
@@ -15,9 +14,7 @@ function Update(){
     useEffect(()=>{
         fetch(api_base+`/details/${id}`)
         .then((res)=>res.json())
-        .then((fetchedData)=>{
-            const data=fetchedData;
-            setEmployee(data)
+        .then((data)=>{
             setUpdatedEmployeeName(data[0].Employeename);
             setUpdatedEmployeeID(data[0].EmployeeID);
             setUpdateEmployeeEmail(data[0].Email);
@@ -39,7 +36,7 @@ function Update(){
             }),
         }).then(alert("Employee Updated SuccessFully"))
     }
-    const filteredKeys = Object.keys(employee[0] || {}).filter((key) => key !== '_id' && key !== '__v');
+    // const filteredKeys = Object.keys(employee[0] || {}).filter((key) => key !== '_id' && key !== '__v');
 
     return(
         <div className='update-employee'>
@@ -53,7 +50,36 @@ function Update(){
                     <img src={logo} alt='logo'/>
                 </div>
             </header>
-           
+            {/* <div className='current-employee'>
+                <div className='employee-db'>
+                    <h1>The Employee Wants To Update:</h1>
+                </div>
+                <br/>
+                <table>
+                    <thead>
+                        <tr>
+                           {filteredKeys && filteredKeys.length>0 &&
+                            filteredKeys.map((key)=>(
+                                <th key={key}>{key}</th>
+                            ))
+                           }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        { employee && employee.length >0 &&
+                            employee.map((item)=>(
+                                <><td key={item._id}>{item.Employeename}</td>
+                                    <td key={item._id}>{item.EmployeeID}</td>
+                                    <td key={item._id}>{item.Email}</td>
+                                    <td key={item._id}>{item.Phone}</td></>
+                                
+                        ))
+                    }
+                    </tr>
+                    </tbody>
+                </table>
+            </div> */}
             <div className='employee'>
                
                 <div class="employee-form">
