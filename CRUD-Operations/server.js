@@ -63,6 +63,7 @@ app.post('/employee',async(req,res)=>{
             res.status(400).json("Missing Form Data");
         }
     } catch(error){
+        console.log("error");
         res.status(500).json("Internal Server Error")
     }
     
